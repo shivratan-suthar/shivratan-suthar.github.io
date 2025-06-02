@@ -41,7 +41,7 @@
         header {
             background: var(--header-bg);
             color: var(--header-text-color);
-            padding: 20px 0;
+            padding: 10px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             position: sticky;
@@ -307,28 +307,39 @@
             border: 2px solid var(--background-color);
         }
 
-    .project-image-container {
+.project-image-container {
     flex: 0 0 auto;
     width: 80%;
     max-width: 450px;
-    height: 400px; /* fixed height to fit 9:16 aspect ratio better */
+    height: 400px;
     scroll-snap-align: center;
     background-color: #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    
     display: flex;
-    justify-content: center;
+    flex-direction: column;         /* Arrange image and caption vertically */
+    justify-content: start;
     align-items: center;
+    padding: 10px;
 }
 
 .project-image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* show full image with possible letterboxing */
+    width: auto;
+    height: 90%;                   /* Image takes 90% of container height */
+    max-height: 90%;
+    object-fit: contain;
     background-color: #eee;
     display: block;
-    border-bottom: 1px solid #ddd;
+}
+
+.image-description {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+    width: 100%;
 }
 
 
@@ -338,7 +349,13 @@
             color: #666;
             background-color: #fafafa;
         }
-
+.image-description {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+    width: 100%;
+}
         /* Contact Section */
         .contact-info p {
             font-size: 1.1em;
@@ -710,7 +727,7 @@
                         <figcaption class="image-description">In-game screenshot of the square navigating.</figcaption>
                     </figure>
                     <figure class="project-image-container">
-                        <img src="image/G3.jpg" alt="Square Game High Score" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/A5D6A7/FFFFFF?text=Project+Img+3';">
+                        <img src="image/G33.jpg" alt="Square Game High Score" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/A5D6A7/FFFFFF?text=Project+Img+3';">
                         <figcaption class="image-description">End-game screen showing high scores.</figcaption>
                     </figure>
                 </div>
@@ -877,7 +894,7 @@
             <div class="contact-info">
                 <p>Feel free to reach out if you have any questions or collaboration opportunities!</p>
                 <p>Email: <a href="mailto:mintshiv1@gmail.com">mintshiv1@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/shiv-ratan-suthar-45a011224" target="_blank">Your LinkedIn Profile</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/shiv-ratan-suthar-45a011224" target="_blank">LinkedIn Profile</a></p>
 
             </div>
         </section>
