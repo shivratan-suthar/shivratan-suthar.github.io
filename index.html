@@ -5,130 +5,361 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shiv Ratan Suthar - My Portfolio</title>
     <style>
+        :root {
+            --primary-color: #6a1b9a; /* Deep Purple */
+            --secondary-color: #ffb300; /* Amber */
+            --accent-color: #e040fb; /* Bright Magenta */
+            --text-color: #333;
+            --background-color: #fce4ec; /* Light Pink */
+            --card-background: #ffffff;
+            --header-bg: #4a148c; /* Darker Purple */
+            --nav-link-hover: #ffecb3; /* Lighter Amber */
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            scroll-behavior: smooth; /* Smooth scrolling for navigation */
         }
+
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
             padding: 20px 0;
         }
+
         header {
-            background: #333;
+            background: var(--header-bg);
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
             padding-bottom: 10px;
+            font-size: 2.8em;
+            letter-spacing: 1px;
         }
+        header p {
+            font-size: 1.2em;
+            color: var(--nav-link-hover);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: var(--accent-color);
+            color: var(--nav-link-hover);
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--card-background);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        /* Profile Section */
         .profile-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px 0;
-            background: #fff;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
         }
         .profile-image-container {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
-            background-color: #ccc; /* Placeholder background */
+            background-color: #ccc;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
-            border: 3px solid #77aaff;
+            margin-bottom: 25px;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
         .profile-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .profile-image-container span {
-            color: #666;
-            font-size: 0.9em;
+        .profile-section p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
         }
-        .about-me, .skills-section, .certificates-section, .projects-section {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        .profile-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #77aaff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .profile-section a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
         }
-        .skills-list ul {
-            list-style: none;
-            padding: 0;
+
+        /* Skills Section */
+        .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px 0;
         }
         .skills-list li {
-            background: #e2e2e2;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.9em;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            list-style: none; /* Remove default bullet points */
         }
-        .certificates-grid, .projects-grid {
+        .skills-list li:hover {
+            transform: translateY(-5px);
+            background-color: var(--accent-color);
+        }
+
+        /* Certificates Section */
+        .certificates-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
-        .certificate-item, .project-item {
-            border: 1px solid #ddd;
-            padding: 15px;
+        .certificate-item {
+            border: 1px solid #eee;
+            padding: 20px;
             text-align: center;
-            background: #f9f9f9;
-            border-radius: 8px;
+            background: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        .certificate-item img, .project-item img {
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .certificate-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .certificate-item img {
             max-width: 100%;
-            height: 150px; /* Fixed height for image placeholders */
+            height: 180px;
             object-fit: contain;
-            margin-bottom: 10px;
-            background-color: #eee; /* Placeholder background */
-            border: 1px dashed #ccc;
+            margin-bottom: 15px;
+            background-color: #eee;
+            border-radius: 5px;
+            border: 1px dashed var(--secondary-color);
         }
-        .project-images {
+        .certificate-item p {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* Projects Section */
+        .project-item {
+            background: var(--card-background);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .project-item h3 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .project-item > p { /* Description directly under project title */
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .project-image-gallery {
             display: flex;
-            justify-content: space-around;
-            gap: 10px;
-            margin-top: 10px;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to images */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            padding-bottom: 15px; /* Space for scrollbar */
+            margin-bottom: 20px;
+            gap: 20px; /* Space between images */
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--secondary-color) var(--background-color); /* Firefox */
         }
-        .project-images img {
-            width: 30%; /* Adjust as needed for 3 images */
-            height: 100px;
-            object-fit: cover;
-            background-color: #eee; /* Placeholder background */
-            border: 1px dashed #ccc;
+
+        .project-image-gallery::-webkit-scrollbar {
+            height: 10px;
         }
+        .project-image-gallery::-webkit-scrollbar-track {
+            background: var(--background-color);
+            border-radius: 10px;
+        }
+        .project-image-gallery::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 10px;
+            border: 2px solid var(--background-color);
+        }
+
+        .project-image-container {
+            flex: 0 0 auto; /* Prevent stretching */
+            width: 80%; /* Adjust as needed, e.g., 80% of parent width */
+            max-width: 450px; /* Max width for each image */
+            scroll-snap-align: center; /* Snap images to center */
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 250px; /* Fixed height for consistent look */
+            object-fit: cover; /* Crop to fit */
+            background-color: #eee;
+            display: block; /* Remove extra space below image */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .project-image-container figcaption, .project-image-container .image-description {
+            padding: 10px 15px;
+            font-size: 0.9em;
+            color: #666;
+            background-color: #fafafa;
+        }
+
+        /* Contact Section */
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            background: #333;
+            padding: 25px;
+            background: var(--header-bg);
             color: #fff;
-            margin-top: 20px;
+            margin-top: 30px;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
         footer a {
-            color: #77aaff;
+            color: var(--secondary-color);
             text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li a {
+                padding: 12px 20px;
+            }
+            .container {
+                width: 95%;
+                padding: 15px 0;
+            }
+            section {
+                padding: 30px;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .profile-image-container {
+                width: 150px;
+                height: 150px;
+            }
+            .skills-list li {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .project-image-container {
+                width: 95%; /* Make images take more width on small screens */
+            }
+            .project-image-container img {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -140,113 +371,186 @@
         </div>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#profile" class="nav-link">Profile</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#certificates" class="nav-link">Certificates</a></li>
+            <li><a href="#contact" class="nav-link">Contact Me</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <section class="profile-section">
+        <section id="profile" class="profile-section">
+            <h2>Profile</h2>
             <div class="profile-image-container">
-                <img src="your-profile-image.jpg" alt="Shiv Ratan Suthar Profile Image" onerror="this.onerror=null;this.src='https://via.placeholder.com/150/CCCCCC/FFFFFF?text=Profile+Image';">
+                <img src="your-profile-image.jpg" alt="Shiv Ratan Suthar Profile Image" onerror="this.onerror=null;this.src='https://via.placeholder.com/200/6a1b9a/FFFFFF?text=Your+Profile';">
             </div>
-            <p>Hello! I'm Shiv Ratan Suthar, a dedicated individual with a strong interest in technology and problem-solving. I enjoy exploring various domains, from web development to data analysis and machine learning.</p>
+            <p>Hello! I'm Shiv Ratan Suthar, a dedicated individual with a strong interest in technology and problem-solving. I enjoy exploring various domains, from web development to data analysis and machine learning. My passion lies in creating impactful solutions and continuously expanding my technical horizons.</p>
             <p>You can find me on GitHub: <a href="https://github.com/shivratan-suthar" target="_blank">shivratan-suthar (Shiv Ratan Suthar)</a></p>
         </section>
 
-        <section class="about-me">
-            <h2>About Me</h2>
-            <p>Welcome to my personal website! I'm a technology enthusiast constantly seeking to expand my knowledge and apply it to real-world problems. My journey in tech has led me to explore various aspects of software development, including front-end and back-end technologies, data science, and embedded systems. I believe in continuous learning and the power of technology to make a positive impact.</p>
-        </section>
-
-        <section class="skills-section">
+        <section id="skills" class="skills-section">
             <h2>My Skills</h2>
-            <div class="skills-list">
-                <ul>
-                    <li>Python</li>
-                    <li>Web Development</li>
-                    <li>Arduino</li>
-                    <li>MS Office</li>
-                    <li>TensorFlow</li>
-                    <li>React</li>
-                    <li>Investing</li>
-                </ul>
-            </div>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>Web Development</li>
+                <li>Arduino</li>
+                <li>MS Office</li>
+                <li>TensorFlow</li>
+                <li>React</li>
+                <li>Investing</li>
+            </ul>
         </section>
 
-        <section class="certificates-section">
+        <section id="projects" class="projects-section">
+            <h2>My Projects</h2>
+
+            <div class="project-item">
+                <h3>Stock Market Analysis Website</h3>
+                <p>A comprehensive web application for real-time and historical stock market data analysis, featuring interactive charts, key financial metrics, and user-defined watchlists.</p>
+                <div class="project-image-gallery">
+                    <figure class="project-image-container">
+                        <img src="stock-project-1.jpg" alt="Stock Market Analysis Dashboard" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/B39DDB/FFFFFF?text=Project+Img+1';">
+                        <figcaption class="image-description">Dashboard view showing stock performance metrics.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="stock-project-2.jpg" alt="Stock Market Charting" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/B39DDB/FFFFFF?text=Project+Img+2';">
+                        <figcaption class="image-description">Interactive chart of historical stock prices.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="stock-project-3.jpg" alt="Stock Market News Feed" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/B39DDB/FFFFFF?text=Project+Img+3';">
+                        <figcaption class="image-description">Integrated news feed for market updates.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Math Practice Website</h3>
+                <p>An interactive and engaging web-based platform designed to help students of all ages practice various mathematical concepts through fun challenges and exercises.</p>
+                <div class="project-image-gallery">
+                    <figure class="project-image-container">
+                        <img src="math-project-1.jpg" alt="Math Practice Homepage" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/9FA8DA/FFFFFF?text=Project+Img+1';">
+                        <figcaption class="image-description">Homepage with selection of math topics.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="math-project-2.jpg" alt="Math Quiz Interface" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/9FA8DA/FFFFFF?text=Project+Img+2';">
+                        <figcaption class="image-description">Quiz interface for arithmetic problems.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="math-project-3.jpg" alt="Math Progress Tracking" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/9FA8DA/FFFFFF?text=Project+Img+3';">
+                        <figcaption class="image-description">User progress tracking and statistics.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Square Game Website</h3>
+                <p>A minimalist yet addictive browser-based game where players control a square, navigating obstacles and collecting points. Developed with a focus on smooth gameplay and responsive design.</p>
+                <div class="project-image-gallery">
+                    <figure class="project-image-container">
+                        <img src="square-project-1.jpg" alt="Square Game Start Screen" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/A5D6A7/FFFFFF?text=Project+Img+1';">
+                        <figcaption class="image-description">The game's initial start screen.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="square-project-2.jpg" alt="Square Game Gameplay" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/A5D6A7/FFFFFF?text=Project+Img+2';">
+                        <figcaption class="image-description">In-game screenshot of the square navigating.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="square-project-3.jpg" alt="Square Game High Score" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/A5D6A7/FFFFFF?text=Project+Img+3';">
+                        <figcaption class="image-description">End-game screen showing high scores.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Algorithmic Trading System</h3>
+                <p>A robust algorithmic trading system designed to execute automated trades based on predefined strategies, utilizing real-time market data and backtesting capabilities.</p>
+                <div class="project-image-gallery">
+                    <figure class="project-image-container">
+                        <img src="algo-trading-project-1.jpg" alt="Algorithmic Trading Dashboard" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/FFCDD2/333333?text=Project+Img+1';">
+                        <figcaption class="image-description">Overview of active trading strategies.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="algo-trading-project-2.jpg" alt="Strategy Backtesting Results" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/FFCDD2/333333?text=Project+Img+2';">
+                        <figcaption class="image-description">Performance results from a backtest.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="algo-trading-project-3.jpg" alt="Trade Execution Log" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/FFCDD2/333333?text=Project+Img+3';">
+                        <figcaption class="image-description">Detailed log of executed trades.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Bitcoin Trading Backtesting</h3>
+                <p>An in-depth analysis and backtesting framework for various Bitcoin trading strategies, helping to evaluate their historical profitability and risks using historical data.</p>
+                <div class="project-image-gallery">
+                    <figure class="project-image-container">
+                        <img src="bitcoin-project-1.jpg" alt="Bitcoin Backtesting Interface" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/E1BEE7/333333?text=Project+Img+1';">
+                        <figcaption class="image-description">User interface for setting backtesting parameters.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="bitcoin-project-2.jpg" alt="Bitcoin Strategy Performance" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/E1BEE7/333333?text=Project+Img+2';">
+                        <figcaption class="image-description">Chart showing strategy performance over time.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="bitcoin-project-3.jpg" alt="Bitcoin Data Visualization" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/E1BEE7/333333?text=Project+Img+3';">
+                        <figcaption class="image-description">Visualization of Bitcoin price movements.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Stock Price Prediction</h3>
+                <p>Development of machine learning models (e.g., LSTM, ARIMA) to forecast future stock prices, providing insights and potential indicators for investment decisions.</p>
+                <div class="project-image-gallery">
+                    <figure class="project-image-container">
+                        <img src="prediction-project-1.jpg" alt="Stock Prediction Model Results" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+1';">
+                        <figcaption class="image-description">Graph of predicted vs. actual stock prices.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="prediction-project-2.jpg" alt="Model Training Dashboard" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+2';">
+                        <figcaption class="image-description">Dashboard for model training and evaluation.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="prediction-project-3.jpg" alt="Feature Importance Analysis" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+3';">
+                        <figcaption class="image-description">Analysis of features influencing predictions.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="certificates" class="certificates-section">
             <h2>Certificates</h2>
             <div class="certificates-grid">
                 <div class="certificate-item">
-                    <h3>Certificate 1 Title</h3>
-                    <img src="certificate1.jpg" alt="Certificate 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x150/EEEEEE/333333?text=Certificate+Image';">
-                    <p>Brief description of Certificate 1.</p>
+                    <h3>Python Programming Certification</h3>
+                    <img src="certificate-python.jpg" alt="Python Certificate" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x180/E0F2F7/333333?text=Python+Cert';">
+                    <p>Certification in advanced Python programming concepts and applications.</p>
                 </div>
                 <div class="certificate-item">
-                    <h3>Certificate 2 Title</h3>
-                    <img src="certificate2.jpg" alt="Certificate 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x150/EEEEEE/333333?text=Certificate+Image';">
-                    <p>Brief description of Certificate 2.</p>
+                    <h3>Web Development Fundamentals</h3>
+                    <img src="certificate-webdev.jpg" alt="Web Development Certificate" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x180/E0F2F7/333333?text=WebDev+Cert';">
+                    <p>Completed a comprehensive course on HTML, CSS, and JavaScript for web development.</p>
                 </div>
                 <div class="certificate-item">
-                    <h3>Certificate 3 Title</h3>
-                    <img src="certificate3.jpg" alt="Certificate 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x150/EEEEEE/333333?text=Certificate+Image';">
-                    <p>Brief description of Certificate 3.</p>
+                    <h3>Machine Learning with TensorFlow</h3>
+                    <img src="certificate-tensorflow.jpg" alt="TensorFlow Certificate" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x180/E0F2F7/333333?text=TensorFlow+Cert';">
+                    <p>Proficiency in building and deploying machine learning models using TensorFlow.</p>
                 </div>
                 </div>
         </section>
 
-        <section class="projects-section">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Stock Market Analysis Website</h3>
-                    <p>A web application for analyzing stock market data, including visualizations and key metrics.</p>
-                    <div class="project-images">
-                        <img src="stock-project-1.jpg" alt="Stock Market Project Image 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+1';">
-                        <img src="stock-project-2.jpg" alt="Stock Market Project Image 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+2';">
-                        <img src="stock-project-3.jpg" alt="Stock Market Project Image 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+3';">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <h3>Math Practice Website</h3>
-                    <p>An interactive website designed to help users practice various math concepts.</p>
-                    <div class="project-images">
-                        <img src="math-project-1.jpg" alt="Math Practice Project Image 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+1';">
-                        <img src="math-project-2.jpg" alt="Math Practice Project Image 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+2';">
-                        <img src="math-project-3.jpg" alt="Math Practice Project Image 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+3';">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <h3>Square Game Website</h3>
-                    <p>A simple yet engaging square-based game implemented using web technologies.</p>
-                    <div class="project-images">
-                        <img src="square-project-1.jpg" alt="Square Game Project Image 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+1';">
-                        <img src="square-project-2.jpg" alt="Square Game Project Image 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+2';">
-                        <img src="square-project-3.jpg" alt="Square Game Project Image 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+3';">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <h3>Algorithmic Trading System</h3>
-                    <p>Development of an automated trading system based on specific algorithms.</p>
-                    <div class="project-images">
-                        <img src="algo-trading-project-1.jpg" alt="Algorithmic Trading Project Image 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+1';">
-                        <img src="algo-trading-project-2.jpg" alt="Algorithmic Trading Project Image 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+2';">
-                        <img src="algo-trading-project-3.jpg" alt="Algorithmic Trading Project Image 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+3';">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <h3>Bitcoin Trading Backtesting</h3>
-                    <p>Analysis and backtesting of various trading strategies for Bitcoin.</p>
-                    <div class="project-images">
-                        <img src="bitcoin-project-1.jpg" alt="Bitcoin Trading Project Image 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+1';">
-                        <img src="bitcoin-project-2.jpg" alt="Bitcoin Trading Project Image 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+2';">
-                        <img src="bitcoin-project-3.jpg" alt="Bitcoin Trading Project Image 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+3';">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <h3>Stock Price Prediction</h3>
-                    <p>Utilizing machine learning models to predict future stock prices.</p>
-                    <div class="project-images">
-                        <img src="prediction-project-1.jpg" alt="Stock Price Prediction Project Image 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+1';">
-                        <img src="prediction-project-2.jpg" alt="Stock Price Prediction Project Image 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+2';">
-                        <img src="prediction-project-3.jpg" alt="Stock Price Prediction Project Image 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x100/BBBBBB/FFFFFF?text=Img+3';">
-                    </div>
-                </div>
+        <section id="contact" class="contact-section">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Feel free to reach out if you have any questions or collaboration opportunities!</p>
+                <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></p>
+                <p>Phone: +91-XXXXXXXXXX</p>
             </div>
         </section>
     </div>
@@ -257,5 +561,62 @@
             <p><a href="https://github.com/shivratan-suthar" target="_blank">GitHub Profile</a></p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Optional: Add/remove active class for styling
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Optional: Highlight active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100; // Adjust for header height
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentSection)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Set active class on initial load based on URL hash (if any)
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                const targetSection = document.querySelector(window.location.hash);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    const activeLink = document.querySelector(`nav ul li a[href="${window.location.hash}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            } else {
+                // If no hash, default to highlight "Profile" or first link
+                document.querySelector('nav ul li a[href="#profile"]').classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
