@@ -327,8 +327,8 @@
 
 .project-image-container img {
     width: auto;
-    height: 90%;                   /* Image takes 90% of container height */
-    max-height: 90%;
+    height: 95%;                   /* Image takes 90% of container height */
+    max-height: 95%;
     object-fit: contain;
     background-color: #eee;
     display: block;
@@ -469,12 +469,12 @@
                 width: 95%;
             }
            .project-image-container img {
-  height: 460px;
+  height: 395px;
   width: 100%;
   object-fit: cover;
 
   /* Rounded corners */
-  border-radius: 12px;
+  border-radius: 10px;
 
   /* Animation on hover/click */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -861,8 +861,16 @@
 
             <div class="project-item">
                 <h3>Algorithmic Trading System</h3>
-                <p>A robust algorithmic trading system designed to execute automated trades based on predefined strategies, utilizing real-time market data and backtesting capabilities.</p>
-                <div class="project-image-gallery">
+                <p>
+                    This project implements an algorithmic trading system designed to automate buy and sell decisions for Indian stocks based on predefined conditions. The system continuously monitors real-time market data and executes trades automatically when specific technical or fundamental criteria are met.
+
+The trading algorithm is deployed and runs on AWS cloud infrastructure, ensuring high availability and scalability. It is configured to activate and operate strictly during official market trading hours, aligning with NSE/BSE timings to comply with exchange rules and optimize trading efficiency.
+
+With configurable parameters tailored for the Indian stock market, the system helps optimize trade timing, reduce manual intervention, and mitigate emotional biases. This project showcases the integration of cloud computing with algorithmic trading to deliver a robust, automated solution for equity trading in India.
+
+
+               </p>
+<!--                 <div class="project-image-gallery">
                     <figure class="project-image-container">
                         <img src="algo-trading-project-1.jpg" alt="Algorithmic Trading Dashboard" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/FFCDD2/333333?text=Project+Img+1';">
                         <figcaption class="image-description">Overview of active trading strategies.</figcaption>
@@ -875,13 +883,21 @@
                         <img src="algo-trading-project-3.jpg" alt="Trade Execution Log" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/FFCDD2/333333?text=Project+Img+3';">
                         <figcaption class="image-description">Detailed log of executed trades.</figcaption>
                     </figure>
-                </div>
+                </div> -->
             </div>
 
             <div class="project-item">
-                <h3>Bitcoin Trading Backtesting</h3>
-                <p>An in-depth analysis and backtesting framework for various Bitcoin trading strategies, helping to evaluate their historical profitability and risks using historical data.</p>
-                <div class="project-image-gallery">
+                <h3>Bitcoin Trading Backtesting System</h3>
+                <p>
+                    This project was developed for an international client and focuses on backtesting Bitcoin trading strategies using technical indicators. The system analyzes 3 years of historical Bitcoin price data at a 1-minute interval to evaluate strategy performance.
+
+A dynamic voting-based decision engine was implemented, where multiple technical indicators—such as candlestick patterns, moving averages, and momentum indicators—contribute to a collective buy or sell signal. If the majority of indicators support a trade direction, the system executes that action.
+
+The indicator parameters are continuously optimized by selecting the values that yielded the best returns in recent trading intervals. This adaptive approach helps maintain strategy effectiveness in changing market conditions.
+
+The project provides a strong foundation for high-frequency trading research and strategy validation using real-world crypto data.
+                </p>
+<!--                 <div class="project-image-gallery">
                     <figure class="project-image-container">
                         <img src="bitcoin-project-1.jpg" alt="Bitcoin Backtesting Interface" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/E1BEE7/333333?text=Project+Img+1';">
                         <figcaption class="image-description">User interface for setting backtesting parameters.</figcaption>
@@ -894,13 +910,13 @@
                         <img src="bitcoin-project-3.jpg" alt="Bitcoin Data Visualization" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/E1BEE7/333333?text=Project+Img+3';">
                         <figcaption class="image-description">Visualization of Bitcoin price movements.</figcaption>
                     </figure>
-                </div>
+                </div> -->
             </div>
 
             <div class="project-item">
                 <h3>Stock Price Prediction</h3>
-                <p>Development of machine learning models (e.g., LSTM, ARIMA) to forecast future stock prices, providing insights and potential indicators for investment decisions.</p>
-                <div class="project-image-gallery">
+                <p>This project encompasses the development of multiple predictive models utilizing various data sources, including fundamental financial data, historical stock prices, technical indicators, and historical data of related stocks. The models are implemented using TensorFlow to perform stock price forecasting. They were rigorously tested to assess their effectiveness in predicting stock price movements.</p>
+<!--                 <div class="project-image-gallery">
                     <figure class="project-image-container">
                         <img src="prediction-project-1.jpg" alt="Stock Prediction Model Results" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+1';">
                         <figcaption class="image-description">Graph of predicted vs. actual stock prices.</figcaption>
@@ -913,7 +929,25 @@
                         <img src="prediction-project-3.jpg" alt="Feature Importance Analysis" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+3';">
                         <figcaption class="image-description">Analysis of features influencing predictions.</figcaption>
                     </figure>
-                </div>
+                </div> -->
+            </div>
+            <div class="project-item">
+                <h3>Web Scraping</h3>
+                <p>This project utilizes Python to scrape websites and extract current fundamental data required for model training. The collected data is organized into a structured database to support further analysis and integration with other systems.</p>
+<!--                 <div class="project-image-gallery">
+                    <figure class="project-image-container">
+                        <img src="prediction-project-1.jpg" alt="Stock Prediction Model Results" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+1';">
+                        <figcaption class="image-description">Graph of predicted vs. actual stock prices.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="prediction-project-2.jpg" alt="Model Training Dashboard" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+2';">
+                        <figcaption class="image-description">Dashboard for model training and evaluation.</figcaption>
+                    </figure>
+                    <figure class="project-image-container">
+                        <img src="prediction-project-3.jpg" alt="Feature Importance Analysis" onerror="this.onerror=null;this.src='https://via.placeholder.com/450x250/BBDEFB/333333?text=Project+Img+3';">
+                        <figcaption class="image-description">Analysis of features influencing predictions.</figcaption>
+                    </figure>
+                </div> -->
             </div>
 
         </section>
