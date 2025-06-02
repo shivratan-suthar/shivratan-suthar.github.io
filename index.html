@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shiv Ratan Suthar - My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #6a1b9a; /* Deep Purple */
@@ -13,17 +14,19 @@
             --background-color: #fce4ec; /* Light Pink */
             --card-background: #ffffff;
             --header-bg: #4a148c; /* Darker Purple */
-            --nav-link-hover: #ffecb3; /* Lighter Amber */
+            --nav-link-hover-bg: #e040fb; /* Accent color for hover */
+            --nav-link-hover-text: #fff;
+            --header-text-color: #fff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
             color: var(--text-color);
-            scroll-behavior: smooth; /* Smooth scrolling for navigation */
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -34,32 +37,40 @@
             padding: 20px 0;
         }
 
+        /* Header Styling */
         header {
             background: var(--header-bg);
-            color: #fff;
+            color: var(--header-text-color);
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Header height adjustments */
+            min-height: 100px; /* Minimum height for small screens */
+            padding-top: 15px; /* Adjust padding for visual balance */
+            padding-bottom: 15px; /* Adjust padding for visual balance */
         }
-        header h1 {
+        header .branding h1 {
             margin: 0;
-            padding-bottom: 10px;
             font-size: 2.8em;
             letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
         }
-        header p {
+        header .branding p {
             font-size: 1.2em;
-            color: var(--nav-link-hover);
+            color: var(--secondary-color);
+            margin-top: 5px;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar - Desktop */
         nav {
-            background: var(--primary-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
+            margin-top: 20px; /* Space between branding and nav links */
         }
         nav ul {
             list-style: none;
@@ -69,21 +80,52 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        nav ul li {
-            position: relative;
-        }
         nav ul li a {
             display: block;
-            color: #fff;
+            color: var(--header-text-color);
             text-decoration: none;
-            padding: 15px 25px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-weight: bold;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
             font-size: 1.1em;
+            border-radius: 5px;
+            margin: 0 5px; /* Spacing between menu items */
         }
         nav ul li a:hover, nav ul li a.active {
-            background-color: var(--accent-color);
-            color: var(--nav-link-hover);
+            background-color: var(--nav-link-hover-bg);
+            color: var(--nav-link-hover-text);
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger Menu Icon (Mobile) */
+        .menu-toggle {
+            display: none; /* Hidden by default on desktop */
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+            position: absolute;
+            right: 20px;
+            top: 30px;
+        }
+        .menu-toggle .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--header-text-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animation for hamburger icon on click */
+        .menu-toggle.open .bar:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+        .menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.open .bar:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
         }
 
         /* Section Styling */
@@ -108,6 +150,7 @@
             margin-bottom: 30px;
             font-size: 2.2em;
             text-align: center;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Profile Section */
@@ -164,10 +207,10 @@
             padding: 10px 20px;
             border-radius: 25px;
             font-size: 1.1em;
-            font-weight: bold;
+            font-weight: 600;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, background-color 0.3s ease;
-            list-style: none; /* Remove default bullet points */
+            list-style: none;
         }
         .skills-list li:hover {
             transform: translateY(-5px);
@@ -197,6 +240,7 @@
             color: var(--primary-color);
             margin-top: 0;
             font-size: 1.4em;
+            font-family: 'Montserrat', sans-serif;
         }
         .certificate-item img {
             max-width: 100%;
@@ -230,8 +274,9 @@
             color: var(--primary-color);
             font-size: 2em;
             margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
         }
-        .project-item > p { /* Description directly under project title */
+        .project-item > p {
             font-size: 1.1em;
             color: #555;
             margin-bottom: 25px;
@@ -239,14 +284,14 @@
 
         .project-image-gallery {
             display: flex;
-            overflow-x: auto; /* Enable horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Snap to images */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            padding-bottom: 15px; /* Space for scrollbar */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 15px;
             margin-bottom: 20px;
-            gap: 20px; /* Space between images */
-            scrollbar-width: thin; /* Firefox */
-            scrollbar-color: var(--secondary-color) var(--background-color); /* Firefox */
+            gap: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary-color) var(--background-color);
         }
 
         .project-image-gallery::-webkit-scrollbar {
@@ -263,10 +308,10 @@
         }
 
         .project-image-container {
-            flex: 0 0 auto; /* Prevent stretching */
-            width: 80%; /* Adjust as needed, e.g., 80% of parent width */
-            max-width: 450px; /* Max width for each image */
-            scroll-snap-align: center; /* Snap images to center */
+            flex: 0 0 auto;
+            width: 80%;
+            max-width: 450px;
+            scroll-snap-align: center;
             background-color: #f0f0f0;
             border-radius: 8px;
             overflow: hidden;
@@ -275,10 +320,10 @@
 
         .project-image-container img {
             width: 100%;
-            height: 250px; /* Fixed height for consistent look */
-            object-fit: cover; /* Crop to fit */
+            height: 250px;
+            object-fit: cover;
             background-color: #eee;
-            display: block; /* Remove extra space below image */
+            display: block;
             border-bottom: 1px solid #ddd;
         }
 
@@ -326,16 +371,56 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2em;
-            }
-            nav ul {
-                flex-direction: column;
+            header {
+                flex-direction: row; /* Branding and menu toggle side-by-side */
+                justify-content: space-between;
                 align-items: center;
+                padding: 15px 20px;
+                min-height: auto; /* Allow height to adjust */
+            }
+            header .branding {
+                text-align: left;
+            }
+            header .branding h1 {
+                font-size: 2em;
+            }
+            header .branding p {
+                font-size: 0.9em;
+            }
+
+            nav {
+                display: none; /* Hide desktop nav */
+                flex-direction: column;
+                position: absolute;
+                top: 80px; /* Adjust based on header height */
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                border-radius: 0 0 10px 10px;
+                padding: 10px 0;
+                transition: all 0.3s ease-in-out;
+                z-index: 999; /* Below sticky header */
+            }
+            nav.active {
+                display: flex; /* Show nav when active */
             }
             nav ul li a {
-                padding: 12px 20px;
+                padding: 12px 25px;
+                text-align: left;
+                width: 100%;
+                box-sizing: border-box;
+                margin: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1); /* Separator */
             }
+            nav ul li:last-child a {
+                border-bottom: none;
+            }
+
+            .menu-toggle {
+                display: flex; /* Show hamburger icon on mobile */
+            }
+
             .container {
                 width: 95%;
                 padding: 15px 0;
@@ -355,31 +440,66 @@
                 padding: 8px 15px;
             }
             .project-image-container {
-                width: 95%; /* Make images take more width on small screens */
+                width: 95%;
             }
             .project-image-container img {
                 height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .branding h1 {
+                font-size: 1.8em;
+            }
+            header .branding p {
+                font-size: 0.8em;
+            }
+            section {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            .profile-image-container {
+                width: 120px;
+                height: 120px;
+            }
+            .skills-list li {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+            .certificate-item h3 {
+                font-size: 1.2em;
+            }
+            .project-item h3 {
+                font-size: 1.6em;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="branding">
             <h1>Shiv Ratan Suthar</h1>
             <p>Passionate Developer & Learner</p>
         </div>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#profile" class="nav-link">Profile</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#certificates" class="nav-link">Certificates</a></li>
-            <li><a href="#contact" class="nav-link">Contact Me</a></li>
-        </ul>
-    </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#profile" class="nav-link">Profile</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-link">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="container">
         <section id="profile" class="profile-section">
@@ -563,9 +683,18 @@
     </footer>
 
     <script>
+        // Smooth scrolling for navigation links
         document.querySelectorAll('nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+
+                // Close mobile menu if open
+                const mainNav = document.getElementById('mainNav');
+                const menuToggle = document.getElementById('menuToggle');
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('open');
+                }
 
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -579,16 +708,30 @@
             });
         });
 
-        // Optional: Highlight active nav link on scroll
+        // Hamburger menu toggle for mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.classList.toggle('open');
+        });
+
+        // Highlight active nav link on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
             let currentSection = '';
 
+            // Get current scroll position, adjusted for sticky header
+            const scrollY = window.pageYOffset;
+            const headerHeight = document.querySelector('header').offsetHeight;
+
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100; // Adjust for header height
+                const sectionTop = section.offsetTop - headerHeight - 20; // Adjusted for header and some padding
                 const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                     currentSection = section.getAttribute('id');
                 }
             });
@@ -606,7 +749,11 @@
             if (window.location.hash) {
                 const targetSection = document.querySelector(window.location.hash);
                 if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    // Scroll to target section after page load and initial layout
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 100); // Small delay to ensure layout is stable
+
                     const activeLink = document.querySelector(`nav ul li a[href="${window.location.hash}"]`);
                     if (activeLink) {
                         activeLink.classList.add('active');
