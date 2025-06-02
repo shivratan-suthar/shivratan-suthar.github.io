@@ -397,7 +397,7 @@
                 flex-direction: row; /* Branding and menu toggle side-by-side */
                 justify-content: space-between;
                 align-items: center;
-                padding: 15px 20px;
+                padding: 10px 8px;
                 min-height: auto; /* Allow height to adjust */
             }
             header .branding {
@@ -468,6 +468,34 @@
                 height: 200px;
             }
         }
+@media (min-width: 769px) {
+    header {
+        min-height: 70px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    header .branding h1 {
+        font-size: 2.2em;
+    }
+
+    header .branding p {
+        font-size: 1em;
+    }
+
+    nav {
+        display: flex !important; /* Ensure nav is visible on desktop */
+        position: static;
+        flex-direction: row;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide hamburger on larger screens */
+    }
+}
 
         @media (max-width: 480px) {
             header .branding h1 {
