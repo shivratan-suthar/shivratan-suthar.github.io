@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shiv Ratan Suthar Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f7fb; color: #333; line-height: 1.6; }
+    header { background: linear-gradient(to right, #667eea, #764ba2); color: white; padding: 2rem 1rem; text-align: center; }
+    header h1 { font-size: 2.5rem; }
+    header p { font-size: 1.2rem; margin-top: 0.5rem; }
+
+    section { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
+    .section-title { font-size: 1.8rem; margin-bottom: 1rem; color: #444; border-bottom: 2px solid #764ba2; display: inline-block; }
+
+    .projects, .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello, I'm Shiv!</h1>
-    <p>Welcome to my website.</p>
+
+  <header>
+    <h1>Shiv Ratan Suthar</h1>
+    <p>21-year-old BBA Graduate from SS Jain Subodh College, Jaipur</p>
+  </header>
+
+  <section>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Short description of a GitHub project. <a href="#">View on GitHub</a></p>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Short description of another project. <a href="#">View on GitHub</a></p>
+      </div>
+      <!-- Add more project cards as needed -->
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Image+1" alt="Placeholder Image 1" />
+      <img src="https://via.placeholder.com/300x200?text=Image+2" alt="Placeholder Image 2" />
+      <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Placeholder Image 3" />
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Shiv Ratan Suthar. All Rights Reserved.
+  </footer>
+
 </body>
 </html>
-<!-- Trigger rebuild -->
