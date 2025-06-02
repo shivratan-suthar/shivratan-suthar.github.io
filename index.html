@@ -469,19 +469,14 @@
             .project-image-container {
                 width: 95%;
             }
-           .project-image-container img {
-  height: 395px;
-  width: 100%;
-  object-fit: cover;
-
-  /* Rounded corners */
-  border-radius: 10px;
-
-  /* Animation on hover/click */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* Optional shadow for visual depth */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+       .project-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    background-color: #eee;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
 /* Hover effect */
