@@ -309,17 +309,16 @@
 
 .project-image-container {
     flex: 0 0 auto;
-    width: 80%;
-    max-width: 450px;
-    height: 400px;
-    scroll-snap-align: center;
+    width: auto;                 
+    max-width: none;            
+    max-height: 50vh;            
     background-color: #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    
-    display: flex;
-    flex-direction: column;         /* Arrange image and caption vertically */
+
+    display: inline-flex;         
+    flex-direction: column;
     justify-content: start;
     align-items: center;
     padding: 10px;
